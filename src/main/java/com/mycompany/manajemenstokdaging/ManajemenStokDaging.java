@@ -11,6 +11,6 @@ package com.mycompany.manajemenstokdaging;
 public class ManajemenStokDaging {
 
     public static void main(String[] args) {
-        System.out.println("Halosss Duniaaaaaa");
+        System.out.println("Halosss Dwwwwwwuniaaaaaa");
     }
 }
