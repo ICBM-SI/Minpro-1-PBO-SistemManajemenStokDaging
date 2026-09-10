@@ -4,6 +4,7 @@
 
 package com.mycompany.manajemenstokdaging;
 import java.util.ArrayList;
+import java.util.Scanner;
 import model.Daging;
 import model.Karyawan;
 import model.StokMasuk;
@@ -13,112 +14,213 @@ import model.StokKeluar;
  * @author LENOVO
  */
 public class ManajemenStokDaging {
-
+ 
+    static Scanner sc = new Scanner(System.in);
     static ArrayList<Daging> daftarDaging = new ArrayList<>();
     static ArrayList<Karyawan> daftarKaryawan = new ArrayList<>();
     static ArrayList<StokMasuk> daftarStokMasuk = new ArrayList<>();
     static ArrayList<StokKeluar> daftarStokKeluar = new ArrayList<>();
-
+ 
+    static int idDaging = 1, idKaryawan = 1, idStokMasuk = 1, idStokKeluar = 1;
+ 
     public static void main(String[] args) {
-
-        daftarDaging.add(new Daging(1, "Daging Sapi", "Paha", 10.5, "01-09-2026", "10-09-2026", 20, "Tersedia"));
-        daftarDaging.add(new Daging(2, "Daging Ayam", "Dada", 5.0, "02-09-2026", "05-09-2026", 15, "Tersedia"));
-        daftarDaging.add(new Daging(3, "Daging Kambing", "Iga", 8.0, "03-09-2026", "12-09-2026", 10, "Tersedia"));
-
-        daftarKaryawan.add(new Karyawan(1, "Budi", "Admin Gudang"));
-        daftarKaryawan.add(new Karyawan(2, "Sari", "Staff Gudang"));
-
-        daftarStokMasuk.add(new StokMasuk(1, 1, 1, 1, "01-09-2026", 20, "Pembelian awal"));
-        daftarStokMasuk.add(new StokMasuk(2, 2, 2, 1, "02-09-2026", 15, "Pembelian awal"));
-
-        daftarStokKeluar.add(new StokKeluar(1, 1, 2, "05-09-2026", 3, "Penjualan", "Dijual ke pelanggan"));
-
-        int[] urutanMenu = {1, 2, 3, 4, 0};
-
-        int i = 0;
         int pilih;
-
+ 
         do {
-            pilih = urutanMenu[i];
             System.out.println("\n=== SISTEM MANAJEMEN STOK DAGING ===");
-            System.out.println("Menu dipilih: " + pilih);
-
+            System.out.println("1. Data Daging");
+            System.out.println("2. Data Karyawan");
+            System.out.println("3. Stok Masuk");
+            System.out.println("4. Stok Keluar");
+            System.out.println("0. Keluar");
+            System.out.print("Pilih menu: ");
+            pilih = Integer.parseInt(sc.nextLine());
+ 
             switch (pilih) {
-                case 1:
-                    tampilkanDaging();
-                    contohUbahHapusDaging();
-                    break;
-                case 2:
-                    tampilkanKaryawan();
-                    break;
-                case 3:
-                    tampilkanStokMasuk();
-                    break;
-                case 4:
-                    tampilkanStokKeluar();
-                    break;
-                case 0:
-                    System.out.println("Program selesai.");
-                    break;
-                default:
-                    System.out.println("Menu tidak dikenal.");
+                case 1: menuDaging(); break;
+                case 2: menuKaryawan(); break;
+                case 3: menuStokMasuk(); break;
+                case 4: menuStokKeluar(); break;
+                case 0: System.out.println("Program selesai."); break;
+                default: System.out.println("Pilihan tidak valid!");
             }
-            i++;
         } while (pilih != 0);
     }
-
+ 
+    static void menuDaging() {
+        int pilih;
+        do {
+            System.out.println("\n-- Menu Daging --");
+            System.out.println("1. Tambah");
+            System.out.println("2. Lihat");
+            System.out.println("3. Ubah");
+            System.out.println("4. Hapus");
+            System.out.println("0. Kembali");
+            System.out.print("Pilih: ");
+            pilih = Integer.parseInt(sc.nextLine());
+ 
+            if (pilih == 1) {
+                System.out.print("Nama daging: ");
+                String nama = sc.nextLine();
+                System.out.print("Bagian daging: ");
+                String bagian = sc.nextLine();
+                System.out.print("Berat (kg): ");
+                double berat = Double.parseDouble(sc.nextLine());
+                System.out.print("Tanggal masuk: ");
+                String tglMasuk = sc.nextLine();
+                System.out.print("Tanggal expired: ");
+                String tglExpired = sc.nextLine();
+                System.out.print("Stok: ");
+                int stok = Integer.parseInt(sc.nextLine());
+                System.out.print("Status: ");
+                String status = sc.nextLine();
+ 
+                daftarDaging.add(new Daging(idDaging++, nama, bagian, berat, tglMasuk, tglExpired, stok, status));
+                System.out.println("Data ditambahkan!");
+ 
+            } else if (pilih == 2) {
+                tampilkanDaging();
+ 
+            } else if (pilih == 3) {
+                System.out.print("ID daging yang diubah: ");
+                int id = Integer.parseInt(sc.nextLine());
+                for (Daging d : daftarDaging) {
+                    if (d.idDaging == id) {
+                        System.out.print("Nama baru: ");
+                        d.namaDaging = sc.nextLine();
+                        System.out.print("Stok baru: ");
+                        d.stok = Integer.parseInt(sc.nextLine());
+                        System.out.print("Status baru: ");
+                        d.status = sc.nextLine();
+                        System.out.println("Data diubah!");
+                    }
+                }
+ 
+            } else if (pilih == 4) {
+                System.out.print("ID daging yang dihapus: ");
+                int id = Integer.parseInt(sc.nextLine());
+                for (int i = 0; i < daftarDaging.size(); i++) {
+                    if (daftarDaging.get(i).idDaging == id) {
+                        daftarDaging.remove(i);
+                        System.out.println("Data dihapus!");
+                        break;
+                    }
+                }
+            }
+        } while (pilih != 0);
+    }
+ 
     static void tampilkanDaging() {
-        System.out.println("\n-- Data Daging --");
-        System.out.println("ID | Nama | Bagian | Berat | Tgl Masuk | Tgl Expired | Stok | Status");
+        System.out.println("\nID | Nama | Bagian | Berat | Tgl Masuk | Tgl Expired | Stok | Status");
         for (Daging d : daftarDaging) {
             d.tampilkan();
         }
     }
-
-    static void contohUbahHapusDaging() {
-        // contoh ubah: stok daging ID 1 dikurangi karena ada stok keluar
-        for (Daging d : daftarDaging) {
-            if (d.idDaging == 1) {
-                d.stok = d.stok - 3;
-                System.out.println("\n[Ubah] Stok Daging Sapi (ID 1) diperbarui jadi: " + d.stok);
+ 
+    static void menuKaryawan() {
+        int pilih;
+        do {
+            System.out.println("\n-- Menu Karyawan --");
+            System.out.println("1. Tambah");
+            System.out.println("2. Lihat");
+            System.out.println("0. Kembali");
+            System.out.print("Pilih: ");
+            pilih = Integer.parseInt(sc.nextLine());
+ 
+            if (pilih == 1) {
+                System.out.print("Nama karyawan: ");
+                String nama = sc.nextLine();
+                System.out.print("Jabatan: ");
+                String jabatan = sc.nextLine();
+                daftarKaryawan.add(new Karyawan(idKaryawan++, nama, jabatan));
+                System.out.println("Data ditambahkan!");
+ 
+            } else if (pilih == 2) {
+                System.out.println("\nID | Nama | Jabatan");
+                for (Karyawan k : daftarKaryawan) {
+                    k.tampilkan();
+                }
             }
-        }
-
-        for (int j = 0; j < daftarDaging.size(); j++) {
-            if (daftarDaging.get(j).idDaging == 3) {
-                System.out.println("[Hapus] Menghapus data: " + daftarDaging.get(j).namaDaging);
-                daftarDaging.remove(j);
-                break;
+        } while (pilih != 0);
+    }
+ 
+    static void menuStokMasuk() {
+        int pilih;
+        do {
+            System.out.println("\n-- Menu Stok Masuk --");
+            System.out.println("1. Tambah");
+            System.out.println("2. Lihat");
+            System.out.println("0. Kembali");
+            System.out.print("Pilih: ");
+            pilih = Integer.parseInt(sc.nextLine());
+ 
+            if (pilih == 1) {
+                System.out.print("ID daging: ");
+                int idD = Integer.parseInt(sc.nextLine());
+                System.out.print("ID supplier: ");
+                int idS = Integer.parseInt(sc.nextLine());
+                System.out.print("ID karyawan: ");
+                int idK = Integer.parseInt(sc.nextLine());
+                System.out.print("Tanggal masuk: ");
+                String tgl = sc.nextLine();
+                System.out.print("Jumlah: ");
+                int jumlah = Integer.parseInt(sc.nextLine());
+                System.out.print("Keterangan: ");
+                String ket = sc.nextLine();
+ 
+                daftarStokMasuk.add(new StokMasuk(idStokMasuk++, idD, idS, idK, tgl, jumlah, ket));
+ 
+                for (Daging d : daftarDaging) {
+                    if (d.idDaging == idD) d.stok += jumlah;
+                }
+                System.out.println("Data ditambahkan!");
+ 
+            } else if (pilih == 2) {
+                System.out.println("\nID | Daging | Supplier | Karyawan | Tanggal | Jumlah | Keterangan");
+                for (StokMasuk s : daftarStokMasuk) {
+                    s.tampilkan();
+                }
             }
-        }
-
-        System.out.println("\n-- Data Daging setelah diubah & dihapus --");
-        for (Daging d : daftarDaging) {
-            d.tampilkan();
-        }
+        } while (pilih != 0);
     }
-
-    static void tampilkanKaryawan() {
-        System.out.println("\n-- Data Karyawan --");
-        System.out.println("ID | Nama | Jabatan");
-        for (Karyawan k : daftarKaryawan) {
-            k.tampilkan();
-        }
-    }
-
-    static void tampilkanStokMasuk() {
-        System.out.println("\n-- Data Stok Masuk --");
-        System.out.println("ID | Daging | Supplier | Karyawan | Tanggal | Jumlah | Keterangan");
-        for (StokMasuk s : daftarStokMasuk) {
-            s.tampilkan();
-        }
-    }
-
-    static void tampilkanStokKeluar() {
-        System.out.println("\n-- Data Stok Keluar --");
-        System.out.println("ID | Daging | Karyawan | Tanggal | Jumlah | Alasan | Keterangan");
-        for (StokKeluar s : daftarStokKeluar) {
-            s.tampilkan();
-        }
+ 
+    static void menuStokKeluar() {
+        int pilih;
+        do {
+            System.out.println("\n-- Menu Stok Keluar --");
+            System.out.println("1. Tambah");
+            System.out.println("2. Lihat");
+            System.out.println("0. Kembali");
+            System.out.print("Pilih: ");
+            pilih = Integer.parseInt(sc.nextLine());
+ 
+            if (pilih == 1) {
+                System.out.print("ID daging: ");
+                int idD = Integer.parseInt(sc.nextLine());
+                System.out.print("ID karyawan: ");
+                int idK = Integer.parseInt(sc.nextLine());
+                System.out.print("Tanggal keluar: ");
+                String tgl = sc.nextLine();
+                System.out.print("Jumlah: ");
+                int jumlah = Integer.parseInt(sc.nextLine());
+                System.out.print("Alasan: ");
+                String alasan = sc.nextLine();
+                System.out.print("Keterangan: ");
+                String ket = sc.nextLine();
+ 
+                daftarStokKeluar.add(new StokKeluar(idStokKeluar++, idD, idK, tgl, jumlah, alasan, ket));
+ 
+                for (Daging d : daftarDaging) {
+                    if (d.idDaging == idD) d.stok -= jumlah;
+                }
+                System.out.println("Data ditambahkan!");
+ 
+            } else if (pilih == 2) {
+                System.out.println("\nID | Daging | Karyawan | Tanggal | Jumlah | Alasan | Keterangan");
+                for (StokKeluar s : daftarStokKeluar) {
+                    s.tampilkan();
+                }
+            }
+        } while (pilih != 0);
     }
 }
