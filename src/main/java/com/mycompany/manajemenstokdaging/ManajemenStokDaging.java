@@ -21,7 +21,6 @@ public class ManajemenStokDaging {
 
     public static void main(String[] args) {
 
-        // ================== DATA AWAL (HARDCODE) ==================
         daftarDaging.add(new Daging(1, "Daging Sapi", "Paha", 10.5, "01-09-2026", "10-09-2026", 20, "Tersedia"));
         daftarDaging.add(new Daging(2, "Daging Ayam", "Dada", 5.0, "02-09-2026", "05-09-2026", 15, "Tersedia"));
         daftarDaging.add(new Daging(3, "Daging Kambing", "Iga", 8.0, "03-09-2026", "12-09-2026", 10, "Tersedia"));
@@ -34,20 +33,16 @@ public class ManajemenStokDaging {
 
         daftarStokKeluar.add(new StokKeluar(1, 1, 2, "05-09-2026", 3, "Penjualan", "Dijual ke pelanggan"));
 
-        // Simulasi urutan menu yang "dipilih" (menggantikan input keyboard)
-        // 1 = Daging, 2 = Karyawan, 3 = Stok Masuk, 4 = Stok Keluar, 0 = Keluar
         int[] urutanMenu = {1, 2, 3, 4, 0};
 
         int i = 0;
         int pilih;
 
-        // perulangan menu, berhenti saat menemukan pilihan 0 (keluar)
         do {
             pilih = urutanMenu[i];
             System.out.println("\n=== SISTEM MANAJEMEN STOK DAGING ===");
             System.out.println("Menu dipilih: " + pilih);
 
-            // percabangan untuk memilih menu
             switch (pilih) {
                 case 1:
                     tampilkanDaging();
@@ -72,7 +67,6 @@ public class ManajemenStokDaging {
         } while (pilih != 0);
     }
 
-    // ---------- TAMPIL DAGING ----------
     static void tampilkanDaging() {
         System.out.println("\n-- Data Daging --");
         System.out.println("ID | Nama | Bagian | Berat | Tgl Masuk | Tgl Expired | Stok | Status");
@@ -81,7 +75,6 @@ public class ManajemenStokDaging {
         }
     }
 
-    // ---------- CONTOH UBAH & HAPUS DAGING (hardcode) ----------
     static void contohUbahHapusDaging() {
         // contoh ubah: stok daging ID 1 dikurangi karena ada stok keluar
         for (Daging d : daftarDaging) {
@@ -91,7 +84,6 @@ public class ManajemenStokDaging {
             }
         }
 
-        // contoh hapus: hapus daging dengan ID 3
         for (int j = 0; j < daftarDaging.size(); j++) {
             if (daftarDaging.get(j).idDaging == 3) {
                 System.out.println("[Hapus] Menghapus data: " + daftarDaging.get(j).namaDaging);
@@ -106,7 +98,6 @@ public class ManajemenStokDaging {
         }
     }
 
-    // ---------- TAMPIL KARYAWAN ----------
     static void tampilkanKaryawan() {
         System.out.println("\n-- Data Karyawan --");
         System.out.println("ID | Nama | Jabatan");
@@ -115,7 +106,6 @@ public class ManajemenStokDaging {
         }
     }
 
-    // ---------- TAMPIL STOK MASUK ----------
     static void tampilkanStokMasuk() {
         System.out.println("\n-- Data Stok Masuk --");
         System.out.println("ID | Daging | Supplier | Karyawan | Tanggal | Jumlah | Keterangan");
@@ -124,7 +114,6 @@ public class ManajemenStokDaging {
         }
     }
 
-    // ---------- TAMPIL STOK KELUAR ----------
     static void tampilkanStokKeluar() {
         System.out.println("\n-- Data Stok Keluar --");
         System.out.println("ID | Daging | Karyawan | Tanggal | Jumlah | Alasan | Keterangan");
