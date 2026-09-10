@@ -1,1 +1,0 @@
-# Minpro-1-PBO-SistemManajemenStokDaging
