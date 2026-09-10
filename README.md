@@ -38,6 +38,7 @@ Digunakan untuk kembali ke menu utama program.
 
 <img width="354" height="323" alt="image" src="https://github.com/user-attachments/assets/23e82de6-7e37-4038-88dd-dc56f9b5f68e" />
 
+# Data Karyawan
 ## Menu Karyawan
 Pada menu ini terdapat beberapa opsi seperti menambahkan karyawan dan melihat daftar karyawan.
 
@@ -52,6 +53,39 @@ Opsi ini digunakan untuk menambah data karyawan dengan memasukkan nama dan jabat
 Opsi ini digunakan untuk melihat data karyawan yang ada pada database.
 
 <img width="213" height="178" alt="image" src="https://github.com/user-attachments/assets/332a98a2-fa10-4817-9493-a133c581b5cf" />
+
+### 3. Kembali
+Digunakan untuk kembali ke menu utama program.
+
+<img width="338" height="264" alt="image" src="https://github.com/user-attachments/assets/ef977469-528f-4e1b-8004-c9f0de2bd2c8" />
+
+# Stok Masuk
+## Menu Stok Masuk
+Di menu ini terdapat opsi untuk menambahkan dan melihat stok daging yang masuk.
+
+<img width="223" height="93" alt="image" src="https://github.com/user-attachments/assets/d480b02e-464d-48ef-8dc4-c205b65e59a7" />
+
+### 1. Tambah
+Opsi ini dapat menambahkan stok baru ke dalam database dengan memasukkan id daging, id supplier, id karyawan, tanggal masuk, jumlah, dan keterangan.
+
+<img width="262" height="263" alt="image" src="https://github.com/user-attachments/assets/23fc8ba8-bcd2-4fe3-bb07-98a591e11c03" />
+
+### 2. Lihat
+Opsi untuk melihat data stok masuk.
+
+<img width="681" height="188" alt="image" src="https://github.com/user-attachments/assets/6f91a8d7-c9c3-4bba-883f-4e4119fef4e1" />
+
+### 3. Kembali
+Digunakan untuk kembali ke menu utama program.
+
+<img width="352" height="282" alt="image" src="https://github.com/user-attachments/assets/3c8bff67-8de4-4ec2-99a2-e6fc90487988" />
+
+
+
+
+
+
+
 
 
 
