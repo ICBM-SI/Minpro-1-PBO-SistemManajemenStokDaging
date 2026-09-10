@@ -10,7 +10,7 @@ package model;
  */
 public class Karyawan {
     public int idKaryawan;
-    public String namaKaryawan, jabatan;
+    public String namaKaryawan, jabatan; {
 
     public Karyawan(int idKaryawan, String namaKaryawan, String jabatan) {
         this.idKaryawan = idKaryawan;
