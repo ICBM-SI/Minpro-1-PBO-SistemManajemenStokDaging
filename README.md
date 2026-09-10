@@ -1,4 +1,4 @@
-# Mini Project PBO - Sistem Manajemen Stok Daging
+# **Mini Project PBO - Sistem Manajemen Stok Daging**
 Aditya Dwinugraha Yusniandra / NIM: 2509116114
 
 # Penjelasan Program
