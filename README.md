@@ -7,7 +7,7 @@ Tampilan awal menu saat pertama kali menjalankan program:
 
 <img width="351" height="158" alt="image" src="https://github.com/user-attachments/assets/3dc179a4-3a36-4e2a-a5cb-6bfad2c3fe76" />
 
-# Data Daging
+# A. Data Daging
 ## Menu Daging
 Memilih opsi Data Daging akan menampilkan CRUD Data Daging seperti tambah, lihat, ubah, dan hapus. Ditambahkan juga opsi untuk kembali ke menu utama.
 
@@ -38,7 +38,7 @@ Digunakan untuk kembali ke menu utama program.
 
 <img width="354" height="323" alt="image" src="https://github.com/user-attachments/assets/23e82de6-7e37-4038-88dd-dc56f9b5f68e" />
 
-# Data Karyawan
+# B. Data Karyawan
 ## Menu Karyawan
 Pada menu ini terdapat beberapa opsi seperti menambahkan karyawan dan melihat daftar karyawan.
 
@@ -59,9 +59,9 @@ Digunakan untuk kembali ke menu utama program.
 
 <img width="338" height="264" alt="image" src="https://github.com/user-attachments/assets/ef977469-528f-4e1b-8004-c9f0de2bd2c8" />
 
-# Stok Masuk
+# C. Stok Masuk
 ## Menu Stok Masuk
-Di menu ini terdapat opsi untuk menambahkan dan melihat stok daging yang masuk.
+Di menu ini terdapat opsi untuk menambahkan dan melihat stok daging yang masuk ke gudang.
 
 <img width="223" height="93" alt="image" src="https://github.com/user-attachments/assets/d480b02e-464d-48ef-8dc4-c205b65e59a7" />
 
@@ -79,6 +79,34 @@ Opsi untuk melihat data stok masuk.
 Digunakan untuk kembali ke menu utama program.
 
 <img width="352" height="282" alt="image" src="https://github.com/user-attachments/assets/3c8bff67-8de4-4ec2-99a2-e6fc90487988" />
+
+# D. Stok Keluar
+## Menu Stok Keluar
+Di menu ini terdapat opsi untuk menambahkan dan melihat stok daging yang keluar dari gudang.
+
+<img width="365" height="260" alt="image" src="https://github.com/user-attachments/assets/1febcf1b-552b-422c-bf9c-bbc77a2dab4c" />
+
+### 1. Tambah
+Opsi untuk mendata stok daging yang dikeluarkan dari gudang.
+
+<img width="414" height="261" alt="image" src="https://github.com/user-attachments/assets/db025864-20f0-444a-bf55-246cb88b0906" />
+
+### 2. Lihat
+Opsi untuk melihat data stok daging yang keluar dari gudang.
+
+<img width="814" height="188" alt="image" src="https://github.com/user-attachments/assets/cc2424ac-b8b9-4bf5-98d7-0e62eaeecb67" />
+
+### 3. Kembali
+Digunakan untuk kembali ke menu utama program.
+
+<img width="349" height="286" alt="image" src="https://github.com/user-attachments/assets/64c71c6f-100d-4191-b070-f2586c259f20" />
+
+
+
+
+
+
+
 
 
 
