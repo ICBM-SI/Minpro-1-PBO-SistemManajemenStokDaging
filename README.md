@@ -38,6 +38,23 @@ Digunakan untuk kembali ke menu utama program.
 
 <img width="354" height="323" alt="image" src="https://github.com/user-attachments/assets/23e82de6-7e37-4038-88dd-dc56f9b5f68e" />
 
+## Menu Karyawan
+Pada menu ini terdapat beberapa opsi seperti menambahkan karyawan dan melihat daftar karyawan.
+
+<img width="208" height="115" alt="image" src="https://github.com/user-attachments/assets/91524e2e-b59f-47ae-8b6c-bd74c9ec01fd" />
+
+### 1. Tambah
+Opsi ini digunakan untuk menambah data karyawan dengan memasukkan nama dan jabatan.
+
+<img width="225" height="183" alt="image" src="https://github.com/user-attachments/assets/33129f22-fb35-4259-a5ef-a5452e8fca85" />
+
+### 2. Lihat
+Opsi ini digunakan untuk melihat data karyawan yang ada pada database.
+
+<img width="213" height="178" alt="image" src="https://github.com/user-attachments/assets/332a98a2-fa10-4817-9493-a133c581b5cf" />
+
+
+
 
 
 
